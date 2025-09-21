@@ -1,3 +1,6 @@
+## Desarrollador
+- CORTES CORTES BRYAN AXEL
+
 # Frontend
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
@@ -57,3 +60,95 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+# Create project
+ng new <project-name>
+
+
+# Install components UI
+npm install primeng @primeng/themes
+
+npm install primeicons
+
+npm install tailwindcss
+
+npm install tailwindcss-primeui
+
+npm install primeflex. (para utilidades css)
+
+# Install components in the WSL
+ng generate component shared/components/header
+
+## Estructura de archivos
+
+frontend/
+├── src/
+│   ├── app/
+│   │   ├── pages/
+│   │   │   ├── auth/
+│   │   │   │   ├── home/
+│   │   │   │   │   ├── home.component.ts
+│   │   │   │   │   ├── home.component.html
+│   │   │   │   │   ├── home.component.css
+│   │   │   │   ├── login/
+│   │   │   │   │   ├── login.component.ts
+│   │   │   │   │   ├── login.component.html
+│   │   │   │   │   ├── login.component.css
+│   │   │   │   ├── register/
+│   │   │   │   │   ├── register.component.ts
+│   │   │   │   │   ├── register.component.html
+│   │   │   │   │   ├── register.component.css
+│   │   │   │   ├── auth.routes.ts
+│   │   │   ├── not-found/
+│   │   │   │   │   ├── not-found.component.ts
+│   │   │   │   │   ├── not-found.component.html
+│   │   │   │   │   ├── not-found.component.css
+│   │   │   ├── papeleria/
+│   │   │   │   ├── card/
+│   │   │   │   │   ├── card.component.ts
+│   │   │   │   │   ├── card.component.html
+│   │   │   │   │   ├── card.component.css
+│   │   │   │   ├── carrito/
+│   │   │   │   │   ├── carrito.component.ts
+│   │   │   │   │   ├── carrito.component.html
+│   │   │   │   │   ├── carrito.component.css
+│   │   │   │   ├── compra/
+│   │   │   │   │   ├── compra.component.ts
+│   │   │   │   │   ├── compra.component.html
+│   │   │   │   │   ├── compra.component.css
+│   │   │   │   ├── cuadernos/
+│   │   │   │   │   ├── cuadernos.component.ts
+│   │   │   │   │   ├── cuadernos.component.html
+│   │   │   │   │   ├── cuadernos.component.css
+│   │   │   │   ├── materiales/
+│   │   │   │   │   ├── materiales.component.ts
+│   │   │   │   │   ├── materiales.component.html
+│   │   │   │   │   ├── materiales.component.css
+│   │   │   │   ├── plumas/
+│   │   │   │   │   ├── plumas.component.ts
+│   │   │   │   │   ├── plumas.component.html
+│   │   │   │   │   ├── plumas.component.css
+│   │   │   │   ├── tijeras/
+│   │   │   │   │   ├── tijeras.component.ts
+│   │   │   │   │   ├── tijeras.component.html
+│   │   │   │   │   ├── tijeras.component.css
+│   │   │   │   ├── papeleria.routes.ts
+│   │   ├── app.component.css
+│   │   ├── app.component.html
+│   │   ├── app.component.ts
+│   │   ├── app.config.ts
+│   │   ├── app.routes.ts
+│   ├── assets/
+│   ├── index.html
+│   ├── main.ts
+│   ├── styles.css
+├── angular.json
+├── package.json
+├── tsconfig.json
+
+
+## Instalación
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/nombre_proyecto.git
+   cd nombre_proyecto

@@ -1,0 +1,31 @@
+<div class="payment-container">
+  <div class="logo">
+    <img src="assets/logo.png" alt="Papeleria Logo" class="logo-image">
+  </div>
+  <form #paymentForm="ngForm" (ngSubmit)="onSubmit()" class="payment-form">
+    <div class="form-group">
+      <input pInputText id="card-number" name="cardNumber" [(ngModel)]="cardNumber" placeholder="Número de tarjeta" required>
+    </div>
+    <div class="form-group">
+      <div class="split-inputs">
+        <input pInputText id="cvc" name="cvc" [(ngModel)]="cvc" placeholder="CVC" required>
+        <input pInputText id="expiry" name="expiry" [(ngModel)]="expiry" placeholder="Válida hasta" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <input pInputText id="name" name="name" [(ngModel)]="name" placeholder="Nombre" required>
+    </div>
+    <div class="form-group">
+      <input pInputText id="email" name="email" [(ngModel)]="email" placeholder="Correo" type="email" required>
+    </div>
+    <button pButton type="submit" label="Procesar Compra" class="pay-button" [routerLink]="['/papeleria/compra']"></button>
+  </form>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social-icons">
+      <span class="home-icon" [routerLink]="['/papeleria/materiales']"><i class="pi pi-home custom-icon" style="color: #938F8F;"></i></span>
+      <span class="instagram-icon" (click)="navigate('instagram')"><i class="pi pi-instagram custom-icon" style="color: #6B7280;"></i></span>
+      <span class="twitter-icon" (click)="navigate('twitter')"><i class="pi pi-whatsapp custom-icon" style="color: #6B7280;"></i></span>
+    </div>
+  </footer>
+</div>

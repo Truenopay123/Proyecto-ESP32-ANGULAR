@@ -1,0 +1,150 @@
+.payment-container {
+  background-color: #1F2937;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  justify-content: flex-start;
+  padding-bottom: 80px;
+}
+
+.logo {
+  margin-bottom: 10px;
+}
+
+.logo-image {
+  max-width: 200px;
+  height: auto;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  flex-grow: 0;
+  justify-content: flex-start;
+}
+
+.form-group {
+  margin: 35px 0;
+  text-align: left;
+}
+
+.split-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.split-inputs input.p-inputtext {
+  width: 50%;
+}
+
+.form-group input.p-inputtext {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid #D1D5DB;
+  border-radius: 0;
+  background: transparent;
+  font-size: 1.1em;
+  color: #1F2937;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input.p-inputtext::placeholder {
+  color: #9CA3AF;
+}
+
+.form-group input.p-inputtext:focus {
+  outline: none;
+  border-bottom: 1px solid #1F2937;
+}
+
+.pay-button {
+  background-color: #fff;
+  color: #1F2937;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto 0;
+  display: block;
+}
+
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  color: #999;
+  background-color: #111827;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 200px;
+}
+
+.footer .custom-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.footer p {
+  margin: 0;
+}
+
+
+/* Media query for mobile responsiveness */
+@media (max-width: 480px) {
+  .logo-image {
+    max-width: 150px;
+  }
+
+  .form-group {
+    margin: 10px 0;
+  }
+
+  .split-inputs {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .split-inputs input.p-inputtext {
+    width: 100%;
+  }
+
+  .pay-button {
+    font-size: 14px;
+    padding: 12px;
+    max-width: 250px;
+  }
+
+  .footer {
+    padding: 10px;
+  }
+
+  .social-icons {
+    gap: 50px;
+  }
+
+  .custom-icon {
+    font-size: 18px;
+  }
+}

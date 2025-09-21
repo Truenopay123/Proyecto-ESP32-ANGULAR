@@ -1,0 +1,83 @@
+<div class="container">
+  <!-- Header con imagen de fondo -->
+  <div class="header-container">
+    <header class="header">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Papelería Logo" />
+      </div>
+      <div class="search-bar">
+        <i class="pi pi-search search-icon" style="color: #938F8F"></i>
+        <input type="text" placeholder="Buscar..." />
+      </div>
+      <div class="user-actions">
+        <span class="user-icon" (click)="navigate('profile')"><i class="pi pi-user custom-icon"></i></span>
+        <span class="upload-icon" (click)="navigate('upload')"><i class="pi pi-file custom-icon"></i></span>
+        <span class="cart-icon" [routerLink]="['/papeleria/carrito']"><i class="pi pi-shopping-cart custom-icon"></i></span>
+        <span class="close-icon" [routerLink]="['/auth/home']"><i class="pi pi-sign-out custom-icon logout-icon" style="color: #EF4444" ></i></span>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="#" [routerLink]="['/papeleria/materiales']">Materiales</a>
+      <a href="#" class="active">Tijeras</a>
+      <a href="#" [routerLink]="['/papeleria/plumas']">Plumas</a>
+      <a href="#" [routerLink]="['/papeleria/cuadernos']">Cuadernos</a>
+    </nav>
+  </div>
+
+  <!-- Contenido con fondo sólido -->
+  <div class="main-container">
+    <!-- Product Section -->
+    <section class="product-section">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="assets/tijera_acero.jpg" alt="Tijeras de acero" />
+        </div>
+        <h3>Tijeras de acero</h3>
+        <p class="price">$86</p>
+        <span class="close-icon" [routerLink]="['/papeleria/carrito']"><i class="pi pi-shopping-cart custom-icon" style="color: #000000" ></i></span>
+      </div>
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="assets/tijera_papel.jpg" alt="Tijeras para papel" />
+        </div>
+        <h3>Tijeras para papel</h3>
+        <p class="price">$12</p>
+        <span class="close-icon" [routerLink]="['/papeleria/carrito']"><i class="pi pi-shopping-cart custom-icon" style="color: #000000" ></i></span>
+      </div>
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="assets/tijera_raugucci.jpg" alt="Tijeras raugucci" />
+        </div>
+        <h3>Tijeras Raugcci</h3>
+        <p class="price">$289.75</p>
+        <span class="close-icon" [routerLink]="['/papeleria/carrito']"><i class="pi pi-shopping-cart custom-icon" style="color: #000000" ></i></span>
+      </div>
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="assets/tijeras_zurdos.jpg" alt="Tijera zurdos" />
+        </div>
+        <h3>Tijeras para zurdos</h3>
+        <p class="price">$102</p>
+        <span class="close-icon" [routerLink]="['/papeleria/carrito']"><i class="pi pi-shopping-cart custom-icon" style="color: #000000" ></i></span>
+      </div>
+    </section>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <span></span>
+      <span class="active"></span>
+      <span></span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="social-icons">
+        <span class="home-icon" [routerLink]="['/papeleria/materiales']"><i class="pi pi-home custom-icon" style="color: #938F8F;"></i></span>
+        <span class="instagram-icon" (click)="navigate('instagram')"><i class="pi pi-instagram custom-icon" style="color: #6B7280;"></i></span>
+        <span class="twitter-icon" (click)="navigate('twitter')"><i class="pi pi-whatsapp custom-icon" style="color: #6B7280;"></i></span>
+      </div>
+    </footer>
+  </div>
+</div>

@@ -1,0 +1,141 @@
+/* Fondo */
+.login-container {
+  background: url('/assets/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  padding-top: 10px;
+}
+
+/* Contenido del login */
+.login-content {
+  text-align: center;
+  padding: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90vh;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Logo y título */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.logo {
+  width: 350px;
+  height: 350px;
+}
+
+/* Efecto de fondo oscuro en la parte superior */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent);
+  z-index: 0;
+}
+
+.login-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Botón */
+.login-btn {
+  width: 423px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #1F2937;
+  border: none;
+  margin-top: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffff;
+}
+
+/* Texto de registro */
+.register-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.register-text a {
+  font-weight: bold;
+  color: #1F2937;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+.login-btn:hover {
+  background-color: #1F2937;
+}
+
+/* Media Query para dispositivos móviles (hasta 768px, típico para tablets y móviles) */
+@media (max-width: 768px) {
+  .login-container {
+    padding-top: 5px; /* Reduce padding top for mobile */
+  }
+
+  .login-content {
+    height: 100vh; /* Full height for mobile */
+    max-width: 100%; /* Full width on mobile */
+    padding: 10px; /* Add some padding for mobile */
+  }
+
+  .logo-container {
+    margin-top: 0;
+  }
+
+  .logo {
+    width: 200px; /* Reduce logo size for mobile */
+    height: 200px;
+  }
+
+  .login-btn {
+    width: 250px; /* Reduce button width for mobile */
+    height: 50px; /* Reduce button height for mobile */
+    font-size: 16px; /* Smaller font size */
+  }
+
+  .register-text {
+    font-size: 12px; /* Smaller text for mobile */
+    margin-top: 10px;
+  }
+}
+
+/* Media Query para pantallas muy pequeñas (hasta 480px, típicas de móviles) */
+@media (max-width: 480px) {
+  .logo {
+    width: 150px; /* Further reduce logo size */
+    height: 150px;
+  }
+
+  .login-btn {
+    width: 200px; /* Further reduce button width */
+    height: 45px; /* Further reduce button height */
+    font-size: 14px; /* Even smaller font size */
+  }
+
+  .register-text {
+    font-size: 10px; /* Smaller text for very small screens */
+  }
+}
