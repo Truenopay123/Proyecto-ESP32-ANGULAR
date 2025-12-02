@@ -1,0 +1,108 @@
+<!-- materiales.component.html -->
+<div class="container">
+  <!-- Header con imagen de fondo -->
+  <div class="header-container">
+    <header class="header">
+      <div class="search-bar">
+        <i class="pi pi-search search-icon"></i>
+        <input type="text" placeholder="Buscar dispositivo..." />
+      </div>
+      <div class="user-actions">
+        <span class="user-icon" (click)="navigate('profile')"><i class="pi pi-user custom-icon"></i></span>
+        <span class="close-icon" [routerLink]="['/auth/home']"><i class="pi pi-sign-out custom-icon logout-icon"></i></span>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <a href="#" class="active">Dashboard ESP32</a>
+    </nav>
+  </div>
+
+  <!-- Dashboard IoT -->
+  <div class="main-container">
+
+    <section class="dashboard-grid">
+
+      <!-- Temperatura -->
+      <div class="sensor-card temperature">
+        <div class="card-header">
+          <i class="pi pi-sun"></i>
+          <h3>Temperatura</h3>
+        </div>
+        <div class="value">{{ temperature }}°C</div>
+        <div class="status">Actualizado hace {{ lastUpdate }}s</div>
+      </div>
+
+      <!-- Humedad -->
+      <div class="sensor-card humidity">
+        <div class="card-header">
+          <i class="pi pi-tint"></i>
+          <h3>Humedad</h3>
+        </div>
+        <div class="value">{{ humidity }}%</div>
+        <div class="status">Normal</div>
+      </div>
+
+      <!-- Relé / LED -->
+      <div class="sensor-card relay">
+        <div class="card-header">
+          <i class="pi pi-power-off"></i>
+          <h3>LED / Relé</h3>
+        </div>
+        <div class="value">
+          <span class="status-dot" [class.on]="relayState"></span>
+          {{ relayState ? 'ENCENDIDO' : 'APAGADO' }}
+        </div>
+        <button class="toggle-btn" (click)="toggleRelay()">
+          {{ relayState ? 'Apagar' : 'Encender' }}
+        </button>
+      </div>
+
+      <!-- Voltaje / Batería -->
+      <div class="sensor-card battery">
+        <div class="card-header">
+          <i class="pi pi-bolt"></i>
+          <h3>Voltaje</h3>
+        </div>
+        <div class="value">{{ voltage }} V</div>
+        <div class="battery-bar">
+          <div class="fill" [style.width.%]="batteryPercent"></div>
+        </div>
+      </div>
+
+      <!-- Uptime -->
+      <div class="sensor-card uptime">
+        <div class="card-header">
+          <i class="pi pi-clock"></i>
+          <h3>Tiempo Activo</h3>
+        </div>
+        <div class="value">{{ uptime }}</div>
+        <small>Desde el último reinicio</small>
+      </div>
+
+      <!-- Conexión -->
+      <div class="sensor-card connection">
+        <div class="card-header">
+          <i class="pi pi-wifi"></i>
+          <h3>Conexión</h3>
+        </div>
+        <div class="value">
+          <span class="status-dot" [class.connected]="isOnline"></span>
+          {{ isOnline ? 'En línea' : 'Desconectado' }}
+        </div>
+        <small>IP: {{ deviceIP }}</small>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="social-icons">
+        <span class="home-icon"><i class="pi pi-home custom-icon"></i></span>
+        <span><i class="pi pi-refresh custom-icon" (click)="refreshData()"></i></span>
+        <span><i class="pi pi-cog custom-icon"></i></span>
+      </div>
+      <p>ESP32 Dashboard</p>
+    </footer>
+  </div>
+</div>

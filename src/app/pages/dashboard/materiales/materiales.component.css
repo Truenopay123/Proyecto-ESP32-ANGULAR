@@ -1,0 +1,340 @@
+/* ====================== DASHBOARD IoT - ESTILO FINAL ====================== */
+
+.container {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0f0f0f;
+}
+
+/* Header con fondo */
+.header-container {
+  background: url('/assets/Fondo2.png') no-repeat center 40%;
+  background-size: cover;
+  padding-bottom: 30px;
+  position: relative;
+  min-height: 280px;
+}
+
+.header-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.95));
+  z-index: 0;
+}
+
+.header, .nav {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 14px 14px 50px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #ccc;
+}
+
+.user-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.custom-icon {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.custom-icon:hover {
+  transform: scale(1.15);
+  color: #ff6b6b;
+}
+
+.logout-icon {
+  color: #ef4444;
+}
+
+/* Navegación */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav a.active, .nav a:hover {
+  color: #ff6b6b;
+}
+
+.nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #ff6b6b;
+  border-radius: 2px;
+}
+
+/* Contenido principal */
+.main-container {
+  flex: 1;
+  background: #0f0f0f;
+  padding: 20px;
+  /* Espacio para que el contenido no quede oculto por el footer fijo */
+  padding-bottom: 120px;
+}
+
+/* Grid responsive */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tarjetas de vidrio esmerilado */
+.sensor-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 28px 20px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sensor-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--border-color);
+}
+
+.sensor-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Colores de borde por sensor */
+.temperature::before { --border-color: #ff6b6b; }
+.humidity::before    { --border-color: #4ecdc4; }
+.relay::before       { --border-color: #ffe66d; }
+.battery::before     { --border-color: #95e1d3; }
+.uptime::before      { --border-color: #a8e6cf; }
+.connection::before  { --border-color: #7cb7ff; }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.card-header i {
+  font-size: 30px;
+}
+
+.value {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 10px 0;
+  letter-spacing: -1px;
+}
+
+.status {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ef4444;
+  margin-right: 10px;
+  box-shadow: 0 0 15px #ef4444;
+}
+
+.status-dot.on,
+.status-dot.connected {
+  background: #10b981;
+  box-shadow: 0 0 20px #10b981;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 20px #10b981; }
+  50% { box-shadow: 0 0 30px #10b981; }
+  100% { box-shadow: 0 0 20px #10b981; }
+}
+
+/* Botón relé */
+.toggle-btn {
+  margin-top: 18px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  background: #ffe66d;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 230, 109, 0.4);
+}
+
+.toggle-btn:hover {
+  background: #ffd93d;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 230, 109, 0.6);
+}
+
+/* Barra de batería */
+.battery-bar {
+  height: 16px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 18px 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.battery-bar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ef4444 0%, #f59e0b 50%, #10b981 100%);
+  border-radius: 8px;
+  transition: width 1s ease;
+}
+
+/* Footer fijo */
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 18px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 12px;
+}
+
+.social-icons i {
+  font-size: 26px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.social-icons i:hover {
+  color: #ff6b6b;
+  transform: scale(1.2);
+}
+
+.footer p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ====================== RESPONSIVE ====================== */
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .value { font-size: 42px; }
+}
+
+@media (max-width: 768px) {
+  .header { flex-direction: column; text-align: center; }
+  .nav { gap: 20px; font-size: 15px; }
+  .social-icons { gap: 40px; }
+  .value { font-size: 38px; }
+}
+
+@media (max-width: 480px) {
+  .dashboard-grid { gap: 18px; padding: 0 10px; }
+  .sensor-card { padding: 20px 16px; }
+  .card-header { font-size: 17px; }
+  .value { font-size: 36px; }
+  .toggle-btn { padding: 10px 20px; font-size: 15px; }
+  .social-icons { gap: 30px; }
+  .social-icons i { font-size: 24px; }
+}

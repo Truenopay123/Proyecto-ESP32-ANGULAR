@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url('/assets/fondo.jpg') no-repeat center center/cover;
+  background: url('/assets/Fondo2.png') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,12 +93,12 @@
 }
 
 .register-btn {
-  background-color: #2B8A78;
+  background-color: #eb0b0be7;
   color: #ffffff;
 }
 
 .register-btn:hover {
-  background-color: #2D6B63;
+  background-color: #eb0b0b6e;
 }
 
 .form-group {

@@ -9,7 +9,7 @@ export const routes: Routes = [
         },
         {
           path: 'papeleria',
-          loadChildren: () => import('./pages/papeleria/papeleria.routes').then(m => m.PAPELERIA_ROUTES),
+          loadChildren: () => import('./pages/dashboard/papeleria.routes').then(m => m.PAPELERIA_ROUTES),
         },
 
     { path: '**', component: NotFoundComponent } // Redirige a Home si la ruta no existe
