@@ -1,3 +1,5 @@
+<!-- Updated login.component.html (frontend/src/app/auth/login/login.component.html) -->
+<!-- Changed submit button to call onSubmit() instead of direct routerLink -->
 <div class="login-container">
   <!-- <div class="login-overlay">
     <img src="assets/logo.png" alt="Papeleria Logo" class="logo" />
@@ -17,7 +19,7 @@
       <div class="form-group">
         <input type="password" id="password" placeholder="Contraseña" />
       </div>
-      <button class="custom-button submit-btn" [routerLink]="['/papeleria/materiales']">Iniciar Sesión</button>
+      <button class="custom-button submit-btn" (click)="onSubmit()">Iniciar Sesión</button>
       <p class="forgot-password">¿Olvidó su contraseña?</p>
     </div>
   </div>

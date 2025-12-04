@@ -1,6 +1,19 @@
 ## Desarrollador
 - CORTES CORTES BRYAN AXEL
 
+## Credenciales para login
+- User 1 
+  admin@example.com
+
+- Password
+  admin123
+
+- User 2
+  user@example.com
+
+- Password
+  user123
+
 # Frontend
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.

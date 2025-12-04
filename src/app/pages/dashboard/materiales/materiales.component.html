@@ -1,4 +1,5 @@
-<!-- materiales.component.html -->
+<!-- Updated materiales.component.html (frontend/src/app/pages/materiales/materiales.component.html) -->
+<!-- Added historical chart section below the grid -->
 <div class="container">
   <!-- Header con imagen de fondo -->
   <div class="header-container">
@@ -43,56 +44,12 @@
         <div class="status">Normal</div>
       </div>
 
-      <!-- Relé / LED -->
-      <div class="sensor-card relay">
-        <div class="card-header">
-          <i class="pi pi-power-off"></i>
-          <h3>LED / Relé</h3>
-        </div>
-        <div class="value">
-          <span class="status-dot" [class.on]="relayState"></span>
-          {{ relayState ? 'ENCENDIDO' : 'APAGADO' }}
-        </div>
-        <button class="toggle-btn" (click)="toggleRelay()">
-          {{ relayState ? 'Apagar' : 'Encender' }}
-        </button>
-      </div>
+    </section>
 
-      <!-- Voltaje / Batería -->
-      <div class="sensor-card battery">
-        <div class="card-header">
-          <i class="pi pi-bolt"></i>
-          <h3>Voltaje</h3>
-        </div>
-        <div class="value">{{ voltage }} V</div>
-        <div class="battery-bar">
-          <div class="fill" [style.width.%]="batteryPercent"></div>
-        </div>
-      </div>
-
-      <!-- Uptime -->
-      <div class="sensor-card uptime">
-        <div class="card-header">
-          <i class="pi pi-clock"></i>
-          <h3>Tiempo Activo</h3>
-        </div>
-        <div class="value">{{ uptime }}</div>
-        <small>Desde el último reinicio</small>
-      </div>
-
-      <!-- Conexión -->
-      <div class="sensor-card connection">
-        <div class="card-header">
-          <i class="pi pi-wifi"></i>
-          <h3>Conexión</h3>
-        </div>
-        <div class="value">
-          <span class="status-dot" [class.connected]="isOnline"></span>
-          {{ isOnline ? 'En línea' : 'Desconectado' }}
-        </div>
-        <small>IP: {{ deviceIP }}</small>
-      </div>
-
+    <!-- Historical Data Chart -->
+    <section class="chart-section">
+      <h2>Datos Históricos (Últimos 10 Registros)</h2>
+      <p-chart type="line" [data]="chartData" [options]="chartOptions"></p-chart>
     </section>
 
     <!-- Footer -->
